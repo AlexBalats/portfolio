@@ -1,0 +1,72 @@
+{
+    "name": "Jeremy Balat",
+    "tagline": "MEng Computer Science at Durham University · AI / Systems / Agentic Networks",
+    "location": "United Kingdom",
+    "availability": "Open to opportunities",
+    "links": {
+      "email": "you@example.com",
+      "github": "https://github.com/yourhandle",
+      "linkedin": "https://www.linkedin.com/in/yourhandle",
+      "cv": ""
+    },
+    "projects": [
+      {
+        "title": "CounterTime",
+        "description": "Proof of concept educational game built for IBM to increase SkillsBuild engagement.",
+        "tags": ["LangGraph", "RAG", "MongoDB", "FastAPI", "Godot"],
+        "links": {
+          "github": "",
+          "demo": "",
+          "writeup": ""
+        },
+        "highlights": [
+          "Built X that does Y.",
+          "Implemented Z to improve A.",
+          "Designed B and integrated C."
+        ]
+      },
+      {
+        "title": "FF — AI Powered Financial Analysis System",
+        "description": "AI-powered financial analysis system for market intelligence and trading insights.",
+        "tags": ["PyTorch", "LLM Fine-tuning", "NLP", "Web Scraping"],
+        "links": {
+          "github": "",
+          "demo": "",
+          "writeup": ""
+        },
+        "highlights": [
+          "Trained/finetuned model for ...",
+          "Built pipeline for ...",
+          "Delivered insights via ..."
+        ]
+      },
+      {
+        "title": "AWS Agentic Networks Hackathon",
+        "description": "Energy optimisation agent for telecom networks using AI and digital twin simulations.",
+        "tags": ["AWS", "AI Agents", "Telecom", "MCP"],
+        "links": {
+          "github": "",
+          "demo": "",
+          "writeup": ""
+        },
+        "highlights": [
+          "Orchestrated agent loop for ...",
+          "Connected simulator/data source to ...",
+          "Evaluated energy/quality tradeoffs ..."
+        ]
+      }
+    ],
+    "experience": [
+      {
+        "role": "MEng Computer Science Student",
+        "org": "Durham University",
+        "dates": "2022 — Present",
+        "bullets": [
+          "Focus areas: AI engineering, distributed systems, ML systems.",
+          "Coursework/projects in recommender systems, deep learning, and systems."
+        ],
+        "tags": ["AI", "Systems", "ML"]
+      }
+    ]
+  }
+  

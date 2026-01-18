@@ -1,6 +1,8 @@
 {
-    "name": "Jeremy Balat",
+    "name": "Alex Balats",
     "tagline": "MEng Computer Science at Durham University · AI / Systems / Agentic Networks",
+    "about": "Im a MEng Computer Science student at Durham University building agentic AI systems and intelligent tooling. My work focuses on bridging machine learning, systems engineering, and real-world deployment  from multi-agent optimisation to computer vision pipelines. Im interested in roles where software engineering and applied AI meet.",
+    "focus": ["AI Agents", "Systems Engineering", "Computer Vision"],
     "location": "United Kingdom",
     "availability": "Open to opportunities",
     "links": {

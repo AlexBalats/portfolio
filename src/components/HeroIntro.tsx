@@ -247,7 +247,7 @@ export default function HeroIntro({
   }, [waveEnabled, name]);
 
   return (
-    <div className="flex flex-col gap-10 sm:gap-12">
+    <div className="flex flex-col gap-4 sm:gap-6">
       <div className="max-w-3xl">
         {showName ? (
           <h1 className="text-4xl font-bold tracking-tight leading-[1.05] sm:text-6xl">
@@ -338,7 +338,7 @@ export default function HeroIntro({
         ) : null}
         {tagline ? (
           <motion.p
-            className="mt-6 text-lg leading-relaxed text-muted sm:text-xl"
+            className="mt-3 text-lg leading-relaxed text-muted sm:text-xl"
             initial={fadeUpInitial}
             animate={fadeUpAnimate}
             transition={{

@@ -77,7 +77,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
             </h2>
           </div>
         </header>
-        <div className="flex flex-col divide-y divide-divider">
+        <div className="flex flex-col">
           {visibleProjects.map((project, index) => {
             const isOpen = openIndex === index;
             const panelId = `project-panel-${index}`;
@@ -211,7 +211,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
           --fx-delay: 0s;
           --glow-opacity: 0.12;
           --glow-blur: 8px;
-          --edge-opacity: 0.12;
+          --edge-opacity: 0.2;
           --blob-bg:
             radial-gradient(400px 220px at 15% 15%, rgba(80, 130, 190, 0.35), rgba(80, 130, 190, 0) 60%),
             radial-gradient(420px 240px at 85% 85%, rgba(255, 225, 150, 0.35), rgba(255, 225, 150, 0) 60%);
@@ -223,7 +223,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
           --fx-play: running;
           --glow-opacity: 0.35;
           --glow-blur: 12px;
-          --edge-opacity: 0.3;
+          --edge-opacity: 0.45;
         }
 
         .project-base {
@@ -280,8 +280,8 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
         .project-edge-bottom { clip-path: inset(calc(100% - 2px) 0 0 0); }
 
         @keyframes projectGlowDrift {
-          0%, 100% { background-position: 0% 0%, 100% 100%; }
-          50%      { background-position: 20% 0%, 80% 100%; }
+          0%, 100% { background-position: -20% 0%, 120% 100%; }
+          50%      { background-position: 30% 0%, 70% 100%; }
         }
 
         @media (prefers-reduced-motion: reduce) {

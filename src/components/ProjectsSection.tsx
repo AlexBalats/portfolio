@@ -29,6 +29,7 @@ const linkLabels: Array<{ key: keyof ProjectLinkSet; label: string }> = [
 
 export default function ProjectsSection({ projects = [] }: ProjectsSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
   const rowVariants = prefersReducedMotion
     ? {
@@ -58,7 +59,11 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
   });
 
   return (
-    <section id="projects" className="py-20 sm:py-28">
+    <section
+      id="projects"
+      className="py-20 sm:py-28"
+      data-any-hover={hoveredIndex !== null ? "true" : "false"}
+    >
       <div className="flex flex-col gap-10">
         <header className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -94,7 +99,22 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   data-active={isOpen ? "true" : undefined}
+                  data-open={isOpen ? "true" : "false"}
+                  data-hovered={hoveredIndex === index ? "true" : "false"}
+                  style={{ ["--fx-delay" as any]: `${-index * 0.8}s` }}
                   onClick={() => toggleProject(index)}
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() =>
+                    setHoveredIndex((current) =>
+                      current === index ? null : current,
+                    )
+                  }
+                  onFocus={() => setHoveredIndex(index)}
+                  onBlur={() =>
+                    setHoveredIndex((current) =>
+                      current === index ? null : current,
+                    )
+                  }
                   variants={rowVariants}
                   initial="rest"
                   animate={isOpen ? "active" : "rest"}
@@ -186,6 +206,9 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
       <style jsx global>{`
         .project-card {
           isolation: isolate;
+          --fx-opacity: 0;
+          --fx-play: paused;
+          --fx-delay: 0s;
           --glow-opacity: 0.12;
           --glow-blur: 8px;
           --edge-opacity: 0.12;
@@ -194,8 +217,10 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
             radial-gradient(420px 240px at 85% 85%, rgba(255, 225, 150, 0.35), rgba(255, 225, 150, 0) 60%);
         }
 
-        .project-card:where(:hover, :focus-visible),
-        .project-card[data-active="true"] {
+        [data-any-hover="true"] .project-card[data-hovered="true"],
+        [data-any-hover="false"] .project-card[data-open="true"] {
+          --fx-opacity: 1;
+          --fx-play: running;
           --glow-opacity: 0.35;
           --glow-blur: 12px;
           --edge-opacity: 0.3;
@@ -216,10 +241,14 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
           pointer-events: none;
           border-radius: inherit;
           display: block;
+          opacity: var(--fx-opacity);
+          transition: opacity 240ms ease;
           background: var(--blob-bg);
           background-repeat: no-repeat;
           background-size: 140% 140%;
           animation: projectGlowDrift 6s ease-in-out infinite;
+          animation-delay: var(--fx-delay);
+          animation-play-state: var(--fx-play);
         }
 
         .project-glow {
@@ -256,7 +285,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .project-visuals { animation: none; }
+          .project-visuals { animation: none !important; }
         }
       `}</style>
     </section>

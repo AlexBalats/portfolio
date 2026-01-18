@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import ContactSection from "@/components/ContactSection";
+import CornerSocials from "@/components/CornerSocials";
 import ExperienceSection from "@/components/ExperienceSection";
 import HeroIntro from "@/components/HeroIntro";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -101,6 +102,7 @@ export default function HeroSequence({ profile }: HeroSequenceProps) {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {introComplete ? <SiteNav /> : null}
+      <CornerSocials github={links.github} linkedin={links.linkedin} />
       <div className="mx-auto flex w-full max-w-5xl flex-col px-6 py-20 sm:px-10 md:pl-16 md:pr-10">
         <div className="flex flex-col">
           <section id="home" className="relative py-20 sm:py-28">

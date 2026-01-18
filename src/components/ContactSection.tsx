@@ -41,7 +41,7 @@ export default function ContactSection({
             <p className="text-sm text-muted sm:text-base">{subtitle}</p>
           ) : null}
         </header>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 sm:max-w-md">
           {email ? (
             <a
               className="group inline-flex items-center gap-3 text-lg font-semibold"
@@ -52,22 +52,6 @@ export default function ContactSection({
                 -&gt;
               </span>
             </a>
-          ) : null}
-          {hasSecondary ? (
-            <div className="grid gap-3 text-sm text-muted sm:max-w-md">
-              {location ? (
-                <div className="flex flex-col gap-1 border-b border-divider pb-3 sm:flex-row sm:items-center sm:justify-between">
-                  <span>Location</span>
-                  <span className="text-foreground">{location}</span>
-                </div>
-              ) : null}
-              {availability ? (
-                <div className="flex flex-col gap-1 border-b border-divider pb-3 sm:flex-row sm:items-center sm:justify-between">
-                  <span>Availability</span>
-                  <span className="text-foreground">{availability}</span>
-                </div>
-              ) : null}
-            </div>
           ) : null}
           {hasSocial ? (
             <div className="flex flex-wrap gap-4 text-sm font-medium text-foreground">
@@ -94,6 +78,28 @@ export default function ContactSection({
             </div>
           ) : null}
         </div>
+        {hasSecondary ? (
+          <div className="mt-8 w-full max-w-none">
+            <div className="grid gap-3 text-sm text-muted">
+              {location ? (
+                <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 border-b border-divider py-4">
+                  <span>Location</span>
+                  <span className="justify-self-end text-right text-foreground">
+                    {location}
+                  </span>
+                </div>
+              ) : null}
+              {availability ? (
+                <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 border-b border-divider py-4">
+                  <span>Availability</span>
+                  <span className="justify-self-end text-right text-foreground">
+                    {availability}
+                  </span>
+                </div>
+              ) : null}
+            </div>
+          </div>
+        ) : null}
       </div>
     </section>
   );

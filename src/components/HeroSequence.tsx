@@ -93,7 +93,10 @@ export default function HeroSequence({ profile }: HeroSequenceProps) {
       {introComplete ? <SiteNav /> : null}
       <CornerSocials github={links.github} linkedin={links.linkedin} />
       <div className="mx-auto w-full max-w-5xl px-6 sm:px-10 md:pl-16 md:pr-10">
-        <section id="home" className="relative overflow-hidden py-20 sm:py-28">
+        <section
+          id="home"
+          className="relative min-h-screen overflow-hidden pt-24 pb-32 sm:pt-32 sm:pb-40 flex items-center"
+        >
           <motion.div
             aria-hidden="true"
             className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[260px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"

@@ -112,45 +112,47 @@ export default function HeroSequence({ profile }: HeroSequenceProps) {
                 "radial-gradient(circle, #0057B7 0%, #FFD700 55%, transparent 70%)",
             }}
           />
-          <HeroIntro
-            name={profile.name}
-            tagline={profile.tagline}
-            about={profile.about}
-            focus={profile.focus}
-            links={links}
-            onComplete={() => setIntroComplete(true)}
-          />
-          <motion.div
-            aria-hidden="true"
-            className="mt-12 flex flex-col items-center gap-2"
-            initial={scrollCueInitial}
-            animate={{
-              opacity: scrollCueVisible ? 1 : 0,
-              y: scrollCueVisible ? 0 : 8,
-            }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : { duration: 0.3, ease: "easeOut" }
-            }
-          >
-            <span className="text-[0.65rem] font-semibold tracking-[0.2em] text-muted">
-              Scroll
-            </span>
-            <motion.span
-              className="block h-8 w-px bg-divider"
-              animate={
-                prefersReducedMotion || !scrollCueVisible
-                  ? { opacity: 0.6, scaleY: 1 }
-                  : { opacity: [0.4, 0.9, 0.4], scaleY: [0.8, 1.1, 0.8] }
-              }
-              transition={
-                prefersReducedMotion || !scrollCueVisible
-                  ? { duration: 0 }
-                  : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
-              }
+          <div className="relative flex w-full items-center self-stretch">
+            <HeroIntro
+              name={profile.name}
+              tagline={profile.tagline}
+              about={profile.about}
+              focus={profile.focus}
+              links={links}
+              onComplete={() => setIntroComplete(true)}
             />
-          </motion.div>
+            <motion.div
+              aria-hidden="true"
+              className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
+              initial={scrollCueInitial}
+              animate={{
+                opacity: scrollCueVisible ? 1 : 0,
+                y: scrollCueVisible ? 0 : 8,
+              }}
+              transition={
+                prefersReducedMotion
+                  ? { duration: 0 }
+                  : { duration: 0.3, ease: "easeOut" }
+              }
+            >
+              <span className="text-[0.65rem] font-semibold tracking-[0.2em] text-muted">
+                Scroll
+              </span>
+              <motion.span
+                className="block h-8 w-px bg-divider"
+                animate={
+                  prefersReducedMotion || !scrollCueVisible
+                    ? { opacity: 0.6, scaleY: 1 }
+                    : { opacity: [0.4, 0.9, 0.4], scaleY: [0.8, 1.1, 0.8] }
+                }
+                transition={
+                  prefersReducedMotion || !scrollCueVisible
+                    ? { duration: 0 }
+                    : { duration: 1.8, repeat: Infinity, ease: "easeInOut" }
+                }
+              />
+            </motion.div>
+          </div>
         </section>
       </div>
     </>

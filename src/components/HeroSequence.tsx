@@ -47,13 +47,18 @@ type ProfileData = {
 
 type HeroSequenceProps = {
   profile: ProfileData;
+  revealBelow?: boolean;
 };
 
-export default function HeroSequence({ profile }: HeroSequenceProps) {
+export default function HeroSequence({
+  profile,
+  revealBelow = false,
+}: HeroSequenceProps) {
   const prefersReducedMotion = useReducedMotion();
   const [introComplete, setIntroComplete] = useState(prefersReducedMotion);
   const [hasScrolled, setHasScrolled] = useState(false);
   const links = profile.links ?? {};
+  void revealBelow; // used by HomeRevealGate to coordinate reveal
 
   useEffect(() => {
     if (prefersReducedMotion) {

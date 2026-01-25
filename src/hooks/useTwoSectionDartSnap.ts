@@ -181,7 +181,7 @@ export default function useTwoSectionDartSnap({
 
     const scrollContainer = getScrollContainer();
     const extraTarget =
-      scrollContainer &&
+      scrollContainer instanceof HTMLElement &&
       scrollContainer !== document.documentElement &&
       scrollContainer !== document.body
         ? scrollContainer

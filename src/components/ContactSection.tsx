@@ -80,9 +80,9 @@ export default function ContactSection({
         </div>
         {hasSecondary ? (
           <div className="mt-8 w-full max-w-none">
-            <div className="grid gap-3 text-sm text-muted">
+            <div className="grid gap-3 text-sm text-muted divide-y divide-divider">
               {location ? (
-                <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 border-b border-divider py-4">
+                <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 py-4">
                   <span>Location</span>
                   <span className="justify-self-end text-right text-foreground">
                     {location}
@@ -90,7 +90,7 @@ export default function ContactSection({
                 </div>
               ) : null}
               {availability ? (
-                <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 border-b border-divider py-4">
+                <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 py-4">
                   <span>Availability</span>
                   <span className="justify-self-end text-right text-foreground">
                     {availability}

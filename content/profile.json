@@ -13,6 +13,21 @@
   },
   "projects": [
     {
+      "title": "Song Library Manager for Musicians",
+      "description": "Dynamic web app for managing song libraries with client-side rendering, AJAX-loaded JSON data, and a Node.js REST API.",
+      "tags": ["JavaScript", "Node.js", "Jest", "AJAX", "HTML", "CSS", "REST API", "ESLint"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Built dynamic web pages using DOM manipulation and AJAX to load JSON data.",
+        "Designed and deployed a REST API server in Node.js to handle JavaScript requests efficiently.",
+        "Improved cross-browser compatibility with ESLint integration and comprehensive Jest test coverage."
+      ]
+    },
+    {
       "title": "CounterTime — IBM Educational AI Game",
       "description": "Agentic educational game built for IBM to increase SkillsBuild engagement through adaptive AI-driven quizzes.",
       "tags": ["LangGraph", "WatsonX", "Ollama", "ChromaDB", "RAG", "Agentic AI", "Game AI"],

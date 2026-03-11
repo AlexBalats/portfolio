@@ -1,0 +1,141 @@
+{
+  "name": "Alex Balats",
+  "tagline": "MEng Computer Science at Durham University · AI / Systems / Agentic Networks",
+  "about": "I'm a MEng Computer Science student at Durham University building agentic AI systems and intelligent tooling. My work focuses on bridging machine learning, systems engineering, and real-world deployment, from multi-agent optimisation to computer vision pipelines. I'm currently interested in part-time roles and joining passionate teams working on interesting projects and startups.",
+  "focus": ["AI Agents", "Systems Engineering", "Computer Vision"],
+  "location": "United Kingdom",
+  "availability": "Open to opportunities",
+  "links": {
+    "email": "balatssasha@gmail.com",
+    "github": "https://github.com/AlexBalats",
+    "linkedin": "https://www.linkedin.com/in/alex-balats-a8b102225/",
+    "cv": ""
+  },
+  "projects": [
+    {
+      "title": "Song Library Manager for Musicians",
+      "description": "Dynamic web app for managing song libraries with client-side rendering, AJAX-loaded JSON data, and a Node.js REST API.",
+      "tags": ["JavaScript", "Node.js", "Jest", "AJAX", "HTML", "CSS", "REST API", "ESLint"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Built dynamic web pages using DOM manipulation and AJAX to load JSON data.",
+        "Designed and deployed a REST API server in Node.js to handle JavaScript requests efficiently.",
+        "Improved cross-browser compatibility with ESLint integration and comprehensive Jest test coverage."
+      ]
+    },
+    {
+      "title": "CounterTime - IBM Educational AI Game",
+      "description": "Agentic educational game built for IBM to increase SkillsBuild engagement through adaptive AI-driven quizzes.",
+      "tags": ["LangGraph", "WatsonX", "Ollama", "ChromaDB", "RAG", "Agentic AI", "Game AI"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Collaborated in a team of 7 to deliver a full-stack AI-powered educational game to an IBM client.",
+        "Built an agentic reasoning system using LangGraph and WatsonX embeddings with a locally hosted IBM Granite model.",
+        "Integrated ChromaDB vector storage to inject game rules and quiz content into agent reasoning.",
+        "Produced industry-style documentation including requirements, sprint plans, and testing reports."
+      ]
+    },
+    {
+      "title": "Agentic Energy Optimization for Radio Access Networks",
+      "description": "Distributed AI agents for optimizing telecom network KPIs in a 6G-aligned simulation framework.",
+      "tags": ["Python", "AWS Bedrock", "Strands SDK", "AgentCore", "MCP", "Multi-Agent RL"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Implemented a distributed MCP runtime for real-time KPI optimization in a 6G-aligned telecom simulator.",
+        "Engineered Strands SDK agents combining reinforcement learning and tool-based reasoning for adaptive control.",
+        "Built a scalable Lambda-MCP pipeline enabling parallel agent execution and about 20% simulated power savings."
+      ]
+    },
+    {
+      "title": "Economic Advisor AI (Atom Bank Project)",
+      "description": "Multi-agent AI system for company analysis using news scraping, NLP, and time-series forecasting.",
+      "tags": ["Python", "AutoGen", "Scikit-Learn", "NLP", "Web Scraping", "LSTM"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Designed a multi-agent pipeline using Microsoft AutoGen for financial and company intelligence.",
+        "Built a web scraper to extract, filter, and semantically analyze financial news.",
+        "Integrated metrics into an LSTM model to predict company performance trends."
+      ]
+    },
+    {
+      "title": "Multimodal AI Classification System",
+      "description": "Statistical and machine learning pipeline for high-dimensional multimodal data analysis.",
+      "tags": ["Python", "NumPy", "scikit-learn", "Random Forest", "Dimensionality Reduction"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Performed statistical analysis to identify skew, outliers, and class structure in multimodal datasets.",
+        "Implemented custom Random Forest classifiers using entropy and Gini impurity splits.",
+        "Applied dimensionality reduction to improve generalization, achieving about 93% accuracy on unseen data."
+      ]
+    },
+    {
+      "title": "High-Performance C++ Data Structures Library",
+      "description": "Low-level C++ library implementing cache-efficient hash tables and probabilistic data structures for high-throughput systems.",
+      "tags": ["C++", "Systems Programming", "Data Structures", "Performance Engineering", "Memory Optimization"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Implemented custom hash tables and probabilistic data structures for fast membership and lookup queries.",
+        "Focused on cache locality, memory layout, and branch prediction to maximize throughput.",
+        "Benchmarked performance against standard library implementations to validate improvements."
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Activity Manager",
+      "org": "Oxford International",
+      "dates": "Jun 2025 - Aug 2025",
+      "bullets": [
+        "Led a team of Activity Leaders delivering onsite programmes to international students.",
+        "Managed staff rotas and responsibilities to ensure smooth daily operations.",
+        "Oversaw equipment, resources, and communications for large group activities."
+      ],
+      "tags": ["Leadership", "Operations", "Management"]
+    },
+    {
+      "role": "Activity Leader",
+      "org": "Oxford International",
+      "dates": "Jun 2023 - Aug 2023, Jun 2024 - Aug 2024",
+      "bullets": [
+        "Led excursions and supervised groups of up to 70 students across the UK.",
+        "Handled high-pressure and safety-critical situations with responsibility and adaptability.",
+        "Worked collaboratively with staff to deliver engaging, well-organized activities."
+      ],
+      "tags": ["Leadership", "Teamwork", "Responsibility"]
+    },
+    {
+      "role": "MEng Computer Science Student",
+      "org": "Durham University",
+      "dates": "Oct 2023 - Jul 2027",
+      "bullets": [
+        "On track for First Class Honours (1:1).",
+        "Focus areas include AI engineering, distributed systems, and machine learning systems."
+      ],
+      "tags": ["AI", "Systems", "ML"]
+    }
+  ]
+}

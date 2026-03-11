@@ -5,61 +5,24 @@ import { motion, useReducedMotion } from "framer-motion";
 import CornerSocials from "@/components/CornerSocials";
 import HeroIntro from "@/components/HeroIntro";
 import SiteNav from "@/components/SiteNav";
-
-type ProfileLinks = {
-  email?: string;
-  github?: string;
-  linkedin?: string;
-  cv?: string;
-};
-
-type Project = {
-  title?: string;
-  description?: string;
-  tags?: string[];
-  links?: {
-    github?: string;
-    demo?: string;
-    writeup?: string;
-  };
-  highlights?: string[];
-};
-
-type ExperienceItem = {
-  role?: string;
-  org?: string;
-  dates?: string;
-  bullets?: string[];
-  tags?: string[];
-};
-
-type ProfileData = {
-  name?: string;
-  tagline?: string;
-  about?: string;
-  focus?: string[];
-  location?: string;
-  availability?: string;
-  links?: ProfileLinks;
-  projects?: Project[];
-  experience?: ExperienceItem[];
-};
+import type { Locale, ProfileData, SiteMessages } from "@/lib/site";
 
 type HeroSequenceProps = {
+  locale: Locale;
+  messages: SiteMessages;
   profile: ProfileData;
 };
 
-export default function HeroSequence({ profile }: HeroSequenceProps) {
+export default function HeroSequence({
+  locale,
+  messages,
+  profile,
+}: HeroSequenceProps) {
   const prefersReducedMotion = useReducedMotion();
-  const [introComplete, setIntroComplete] = useState(prefersReducedMotion);
+  const [introFinished, setIntroFinished] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const links = profile.links ?? {};
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      setIntroComplete(true);
-    }
-  }, [prefersReducedMotion]);
+  const introComplete = prefersReducedMotion || introFinished;
 
   useEffect(() => {
     let ticking = false;
@@ -90,7 +53,7 @@ export default function HeroSequence({ profile }: HeroSequenceProps) {
 
   return (
     <>
-      {introComplete ? <SiteNav /> : null}
+      {introComplete ? <SiteNav locale={locale} messages={messages} /> : null}
       <CornerSocials github={links.github} linkedin={links.linkedin} />
       <div className="mx-auto w-full max-w-5xl px-6 sm:px-10 md:pl-16 md:pr-10">
         <section
@@ -118,8 +81,7 @@ export default function HeroSequence({ profile }: HeroSequenceProps) {
               tagline={profile.tagline}
               about={profile.about}
               focus={profile.focus}
-              links={links}
-              onComplete={() => setIntroComplete(true)}
+              onComplete={() => setIntroFinished(true)}
             />
             <motion.div
               aria-hidden="true"
@@ -136,7 +98,7 @@ export default function HeroSequence({ profile }: HeroSequenceProps) {
               }
             >
               <span className="text-[0.65rem] font-semibold tracking-[0.2em] text-muted">
-                Scroll
+                {messages.hero.scroll}
               </span>
               <motion.span
                 className="block h-8 w-px bg-divider"

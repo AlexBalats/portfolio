@@ -1,36 +1,29 @@
 "use client";
 
+import type { CSSProperties } from "react";
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-
-type ProjectLinkSet = {
-  github?: string;
-  demo?: string;
-  writeup?: string;
-};
-
-type Project = {
-  title?: string;
-  description?: string;
-  tags?: string[];
-  links?: ProjectLinkSet;
-  highlights?: string[];
-};
+import type { Project, ProjectLinkSet, SiteMessages } from "@/lib/site";
 
 type ProjectsSectionProps = {
   projects?: Project[];
+  title: string;
+  linkLabels: SiteMessages["links"];
 };
 
-const linkLabels: Array<{ key: keyof ProjectLinkSet; label: string }> = [
-  { key: "github", label: "GitHub" },
-  { key: "demo", label: "Demo" },
-  { key: "writeup", label: "Writeup" },
-];
-
-export default function ProjectsSection({ projects = [] }: ProjectsSectionProps) {
+export default function ProjectsSection({
+  projects = [],
+  title,
+  linkLabels,
+}: ProjectsSectionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const prefersReducedMotion = useReducedMotion();
+  const projectLinkLabels: Array<{ key: keyof ProjectLinkSet; label: string }> = [
+    { key: "github", label: linkLabels.github },
+    { key: "demo", label: linkLabels.demo },
+    { key: "writeup", label: linkLabels.writeup },
+  ];
   const rowVariants = prefersReducedMotion
     ? {
         rest: { y: 0, boxShadow: "0 0 0 rgba(0,0,0,0)" },
@@ -73,7 +66,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
               style={{ backgroundColor: "#0057B7" }}
             />
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Projects
+              {title}
             </h2>
           </div>
         </header>
@@ -101,7 +94,11 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
                   data-active={isOpen ? "true" : undefined}
                   data-open={isOpen ? "true" : "false"}
                   data-hovered={hoveredIndex === index ? "true" : "false"}
-                  style={{ ["--fx-delay" as any]: `${-index * 0.8}s` }}
+                  style={
+                    {
+                      "--fx-delay": `${-index * 0.8}s`,
+                    } as CSSProperties
+                  }
                   onClick={() => toggleProject(index)}
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() =>
@@ -181,7 +178,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsSectionProps)
                     ) : null}
                     {hasLinks ? (
                       <div className="mt-4 flex flex-wrap gap-4 text-sm font-medium text-foreground">
-                        {linkLabels.map((link) =>
+                        {projectLinkLabels.map((link) =>
                           project.links?.[link.key] ? (
                             <a
                               key={link.key}

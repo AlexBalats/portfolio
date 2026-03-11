@@ -1,21 +1,31 @@
 "use client";
 
+import type { SiteMessages } from "@/lib/site";
+
 type ContactSectionProps = {
+  title: string;
   email?: string;
   location?: string;
+  locationLabel: string;
   availability?: string;
+  availabilityLabel: string;
   github?: string;
   linkedin?: string;
   subtitle?: string;
+  socialLabels: SiteMessages["links"];
 };
 
 export default function ContactSection({
+  title,
   email,
   location,
+  locationLabel,
   availability,
+  availabilityLabel,
   github,
   linkedin,
   subtitle,
+  socialLabels,
 }: ContactSectionProps) {
   const hasSecondary = Boolean(location || availability);
   const hasSocial = Boolean(github || linkedin);
@@ -34,7 +44,7 @@ export default function ContactSection({
               }}
             />
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              Contact.
+              {title}
             </h2>
           </div>
           {subtitle ? (
@@ -62,7 +72,7 @@ export default function ContactSection({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  GitHub
+                  {socialLabels.github}
                 </a>
               ) : null}
               {linkedin ? (
@@ -72,7 +82,7 @@ export default function ContactSection({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  LinkedIn
+                  {socialLabels.linkedin}
                 </a>
               ) : null}
             </div>
@@ -83,7 +93,7 @@ export default function ContactSection({
             <div className="grid gap-3 text-sm text-muted divide-y divide-divider">
               {location ? (
                 <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 py-4">
-                  <span>Location</span>
+                  <span>{locationLabel}</span>
                   <span className="justify-self-end text-right text-foreground">
                     {location}
                   </span>
@@ -91,7 +101,7 @@ export default function ContactSection({
               ) : null}
               {availability ? (
                 <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 py-4">
-                  <span>Availability</span>
+                  <span>{availabilityLabel}</span>
                   <span className="justify-self-end text-right text-foreground">
                     {availability}
                   </span>

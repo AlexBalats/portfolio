@@ -1,19 +1,15 @@
 "use client";
 
-type ExperienceItem = {
-  role?: string;
-  org?: string;
-  dates?: string;
-  bullets?: string[];
-  tags?: string[];
-};
+import type { ExperienceItem } from "@/lib/site";
 
 type ExperienceSectionProps = {
   experience?: ExperienceItem[];
+  title: string;
 };
 
 export default function ExperienceSection({
   experience = [],
+  title,
 }: ExperienceSectionProps) {
   const visibleExperience = experience.filter((item) => {
     const hasBullets = Boolean(item.bullets?.length);
@@ -35,7 +31,7 @@ export default function ExperienceSection({
             style={{ backgroundColor: "#FFD700" }}
           />
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Experience
+            {title}
           </h2>
         </header>
         <div className="border-l border-divider pl-6">

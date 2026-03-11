@@ -1,20 +1,27 @@
 "use client";
 
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import type { Locale, SiteMessages } from "@/lib/site";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 
-const navItems = [
-  { id: "home", label: "Home" },
-  { id: "projects", label: "Projects" },
-  { id: "experience", label: "Experience" },
-  { id: "contact", label: "Contact" },
-];
-const sectionIds = navItems.map((item) => item.id);
+type SiteNavProps = {
+  locale: Locale;
+  messages: SiteMessages;
+};
 
-export default function SiteNav() {
+const navItemIds = ["home", "projects", "experience", "contact"] as const;
+
+export default function SiteNav({ locale, messages }: SiteNavProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeId, setActiveId] = useState(sectionIds[0]);
+  const [activeId, setActiveId] = useState<(typeof navItemIds)[number]>("home");
   const prefersReducedMotion = useReducedMotion();
+  const navItems = [
+    { id: "home", label: messages.nav.home },
+    { id: "projects", label: messages.nav.projects },
+    { id: "experience", label: messages.nav.experience },
+    { id: "contact", label: messages.nav.contact },
+  ] as const;
 
   const fadeInitial = prefersReducedMotion
     ? { opacity: 1, y: 0 }
@@ -27,7 +34,7 @@ export default function SiteNav() {
   const closeMenu = () => setIsOpen(false);
 
   useEffect(() => {
-    const sections = sectionIds
+    const sections = navItemIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => Boolean(section));
 
@@ -44,7 +51,10 @@ export default function SiteNav() {
         const [topEntry] = visible.sort(
           (a, b) => b.intersectionRatio - a.intersectionRatio,
         );
-        setActiveId(topEntry.target.id);
+        const nextActiveId = topEntry.target.id;
+        if (navItemIds.includes(nextActiveId as (typeof navItemIds)[number])) {
+          setActiveId(nextActiveId as (typeof navItemIds)[number]);
+        }
       },
       {
         rootMargin: "-35% 0px -55% 0px",
@@ -83,21 +93,33 @@ export default function SiteNav() {
         animate={fadeAnimate}
         transition={fadeTransition}
       >
-        <button
-          type="button"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-divider bg-background/90 text-foreground backdrop-blur transition-colors hover:border-foreground"
-          aria-label="Open menu"
-          aria-haspopup="dialog"
-          aria-expanded={isOpen}
-          aria-controls="mobile-menu"
-          onClick={() => setIsOpen(true)}
-        >
-          <span className="flex flex-col gap-1.5">
-            <span className="h-px w-5 bg-foreground" />
-            <span className="h-px w-5 bg-foreground" />
-            <span className="h-px w-5 bg-foreground" />
-          </span>
-        </button>
+        <div className="flex items-center gap-3">
+          <LanguageSwitcher labels={messages.languageSwitcher} />
+          <button
+            type="button"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-divider bg-background/90 text-foreground backdrop-blur transition-colors hover:border-foreground"
+            aria-label="Open menu"
+            aria-haspopup="dialog"
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setIsOpen(true)}
+          >
+            <span className="flex flex-col gap-1.5">
+              <span className="h-px w-5 bg-foreground" />
+              <span className="h-px w-5 bg-foreground" />
+              <span className="h-px w-5 bg-foreground" />
+            </span>
+          </button>
+        </div>
+      </motion.div>
+
+      <motion.div
+        className="fixed right-10 top-8 z-50 hidden md:block"
+        initial={fadeInitial}
+        animate={fadeAnimate}
+        transition={fadeTransition}
+      >
+        <LanguageSwitcher labels={messages.languageSwitcher} />
       </motion.div>
 
       <motion.nav
@@ -112,11 +134,11 @@ export default function SiteNav() {
             const isActive = activeId === item.id;
             return (
             <li key={item.id}>
-              <a
-                href={`#${item.id}`}
-                className={`flex items-center gap-3 transition-colors ${
-                  isActive ? "text-foreground" : "text-muted"
-                } hover:text-foreground`}
+                  <a
+                    href={`/${locale}#${item.id}`}
+                    className={`flex items-center gap-3 transition-colors ${
+                      isActive ? "text-foreground" : "text-muted"
+                    } hover:text-foreground`}
                 aria-current={isActive ? "page" : undefined}
               >
                 <span
@@ -163,7 +185,7 @@ export default function SiteNav() {
                   return (
                   <li key={item.id}>
                     <a
-                      href={`#${item.id}`}
+                      href={`/${locale}#${item.id}`}
                       className={`transition-colors ${
                         isActive ? "text-foreground" : "text-muted"
                       } hover:text-foreground`}

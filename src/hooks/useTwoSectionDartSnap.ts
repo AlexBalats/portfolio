@@ -24,14 +24,16 @@ const isEditableTarget = (target: EventTarget | null) => {
 
 const getScrollContainer = () => {
   const main = document.querySelector("main");
-  if (main) {
+  if (main instanceof HTMLElement) {
     const style = window.getComputedStyle(main);
     if (/(auto|scroll|overlay)/.test(style.overflowY)) {
       return main;
     }
   }
 
-  return document.scrollingElement;
+  return document.scrollingElement instanceof HTMLElement
+    ? document.scrollingElement
+    : null;
 };
 
 export default function useTwoSectionDartSnap({

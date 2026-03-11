@@ -1,14 +1,14 @@
 "use client";
 
-import type { ComponentProps } from "react";
-import HeroSequence from "@/components/HeroSequence";
+import type { ProfileData } from "@/lib/site";
 import useTwoSectionDartSnap from "@/hooks/useTwoSectionDartSnap";
 
 type HomeClientProps = {
-  profile: ComponentProps<typeof HeroSequence>["profile"];
+  profile: ProfileData;
 };
 
 export default function HomeClient({ profile }: HomeClientProps) {
   useTwoSectionDartSnap({ topId: "home", bottomId: "projects" });
-  return <HeroSequence profile={profile} />;
+  void profile;
+  return null;
 }

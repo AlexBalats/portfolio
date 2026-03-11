@@ -10,19 +10,11 @@ import {
   type MotionValue,
 } from "framer-motion";
 
-type HeroLinks = {
-  email?: string;
-  github?: string;
-  linkedin?: string;
-  cv?: string;
-};
-
 type HeroIntroProps = {
   name?: string;
   tagline?: string;
   about?: string;
   focus?: string[];
-  links: HeroLinks;
   onComplete?: () => void;
 };
 
@@ -145,7 +137,6 @@ export default function HeroIntro({
   tagline,
   about,
   focus,
-  links,
   onComplete,
 }: HeroIntroProps) {
   const prefersReducedMotion = useReducedMotion();

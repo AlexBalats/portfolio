@@ -43,6 +43,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
         <div className="border-t border-divider">
           <ContactSection
             availability={profile.availability}
+            availabilityNote={profile.availabilityNote}
             email={links.email}
             github={links.github}
             linkedin={links.linkedin}
@@ -50,6 +51,7 @@ export default async function LocalePage({ params }: LocalePageProps) {
             socialLabels={messages.links}
             subtitle={profile.tagline}
             title={messages.sections.contact}
+            availabilityHeading={messages.sections.availabilityHeading}
             availabilityLabel={messages.sections.availability}
             locationLabel={messages.sections.location}
           />

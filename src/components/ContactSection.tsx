@@ -8,6 +8,8 @@ type ContactSectionProps = {
   location?: string;
   locationLabel: string;
   availability?: string;
+  availabilityNote?: string;
+  availabilityHeading: string;
   availabilityLabel: string;
   github?: string;
   linkedin?: string;
@@ -21,6 +23,8 @@ export default function ContactSection({
   location,
   locationLabel,
   availability,
+  availabilityNote,
+  availabilityHeading,
   availabilityLabel,
   github,
   linkedin,
@@ -48,13 +52,25 @@ export default function ContactSection({
             </h2>
           </div>
           {subtitle ? (
-            <p className="text-sm text-muted sm:text-base">{subtitle}</p>
+            <p className="max-w-xl text-sm text-muted sm:text-base">
+              {subtitle}
+            </p>
           ) : null}
         </header>
-        <div className="flex flex-col gap-6 sm:max-w-md">
+        <div className="flex min-w-0 flex-col gap-6">
+          {availabilityNote ? (
+            <div className="w-full rounded-[22px] border border-divider bg-surface/80 px-5 py-5 sm:px-6">
+              <p className="text-[0.72rem] font-semibold tracking-[0.2em] text-muted uppercase">
+                {availabilityHeading}
+              </p>
+              <p className="mt-3 max-w-4xl text-sm leading-relaxed text-muted sm:text-[0.95rem]">
+                {availabilityNote}
+              </p>
+            </div>
+          ) : null}
           {email ? (
             <a
-              className="group inline-flex items-center gap-3 text-lg font-semibold"
+              className="group inline-flex w-fit items-center gap-3 text-lg font-semibold"
               href={`mailto:${email}`}
             >
               <span>{email}</span>
@@ -64,7 +80,7 @@ export default function ContactSection({
             </a>
           ) : null}
           {hasSocial ? (
-            <div className="flex flex-wrap gap-4 text-sm font-medium text-foreground">
+            <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-foreground">
               {github ? (
                 <a
                   className="transition hover:underline"
@@ -89,7 +105,7 @@ export default function ContactSection({
           ) : null}
         </div>
         {hasSecondary ? (
-          <div className="mt-8 w-full max-w-none">
+          <div className="mt-8 w-full">
             <div className="grid gap-3 text-sm text-muted divide-y divide-divider">
               {location ? (
                 <div className="grid w-full grid-cols-[1fr_auto] items-center gap-8 py-4">

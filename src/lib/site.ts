@@ -41,6 +41,7 @@ export type ProfileData = {
   focus?: string[];
   location?: string;
   availability?: string;
+  availabilityNote?: string;
   links?: ProfileLinkSet;
   projects?: Project[];
   experience?: ExperienceItem[];
@@ -60,6 +61,7 @@ export type SiteMessages = {
     projects: string;
     experience: string;
     contact: string;
+    availabilityHeading: string;
     location: string;
     availability: string;
   };
@@ -98,6 +100,7 @@ const messages: Record<Locale, SiteMessages> = {
       projects: "Projects",
       experience: "Experience",
       contact: "Contact.",
+      availabilityHeading: "Availability",
       location: "Location",
       availability: "Availability",
     },
@@ -129,6 +132,7 @@ const messages: Record<Locale, SiteMessages> = {
       projects: "Проєкти",
       experience: "Досвід",
       contact: "Контакти.",
+      availabilityHeading: "Доступність",
       location: "Локація",
       availability: "Доступність",
     },

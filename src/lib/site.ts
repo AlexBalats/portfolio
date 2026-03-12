@@ -34,11 +34,18 @@ export type ExperienceItem = {
   tags?: string[];
 };
 
+export type CapabilityItem = {
+  title?: string;
+  description?: string;
+  skills?: string[];
+};
+
 export type ProfileData = {
   name?: string;
   tagline?: string;
   about?: string;
   focus?: string[];
+  capabilities?: CapabilityItem[];
   location?: string;
   availability?: string;
   availabilityNote?: string;
@@ -50,6 +57,7 @@ export type ProfileData = {
 export type SiteMessages = {
   nav: {
     home: string;
+    capabilities: string;
     projects: string;
     experience: string;
     contact: string;
@@ -58,6 +66,7 @@ export type SiteMessages = {
     scroll: string;
   };
   sections: {
+    capabilities: string;
     projects: string;
     experience: string;
     contact: string;
@@ -89,6 +98,7 @@ const messages: Record<Locale, SiteMessages> = {
   en: {
     nav: {
       home: "Home",
+      capabilities: "Capabilities",
       projects: "Projects",
       experience: "Experience",
       contact: "Contact",
@@ -97,6 +107,7 @@ const messages: Record<Locale, SiteMessages> = {
       scroll: "Scroll",
     },
     sections: {
+      capabilities: "Capabilities",
       projects: "Projects",
       experience: "Experience",
       contact: "Contact.",
@@ -121,6 +132,7 @@ const messages: Record<Locale, SiteMessages> = {
   uk: {
     nav: {
       home: "Головна",
+      capabilities: "Можливості",
       projects: "Проєкти",
       experience: "Досвід",
       contact: "Контакти",
@@ -129,6 +141,7 @@ const messages: Record<Locale, SiteMessages> = {
       scroll: "Гортай",
     },
     sections: {
+      capabilities: "Можливості",
       projects: "Проєкти",
       experience: "Досвід",
       contact: "Контакти.",
@@ -152,7 +165,13 @@ const messages: Record<Locale, SiteMessages> = {
   },
 };
 
-export const sectionIds = ["home", "projects", "experience", "contact"] as const;
+export const sectionIds = [
+  "home",
+  "capabilities",
+  "projects",
+  "experience",
+  "contact",
+] as const;
 
 export function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);

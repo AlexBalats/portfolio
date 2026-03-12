@@ -3,6 +3,28 @@
   "tagline": "MEng Computer Science at Durham University · AI / Systems / Agentic Networks",
   "about": "I'm a MEng Computer Science student at Durham University building agentic AI systems and intelligent tooling. My work focuses on bridging machine learning, systems engineering, and real-world deployment, from multi-agent optimisation to computer vision pipelines. I'm currently interested in part-time roles and joining passionate teams working on interesting projects and startups.",
   "focus": ["AI Agents", "Systems Engineering", "Computer Vision"],
+  "capabilities": [
+    {
+      "title": "Agentic AI Systems",
+      "description": "Build multi-agent workflows, tool-using agents, retrieval pipelines, and AI automations that connect models to real tasks.",
+      "skills": ["LangGraph", "AutoGen", "MCP", "RAG", "ChromaDB", "Ollama", "AWS Bedrock", "WatsonX"]
+    },
+    {
+      "title": "Backend & Systems",
+      "description": "Build APIs, services, pipelines, and performance-conscious systems with an emphasis on reliability, structure, and real deployment constraints.",
+      "skills": ["Python", "Node.js", "C++", "REST APIs", "AWS Lambda", "Distributed Systems", "Systems Design", "Performance Engineering"]
+    },
+    {
+      "title": "Applied ML",
+      "description": "Comfortable taking ML work from analysis to implementation, including training, evaluation, forecasting, and multimodal pipelines.",
+      "skills": ["scikit-learn", "NumPy", "Computer Vision", "NLP", "Time Series", "Random Forest", "Dimensionality Reduction", "Data Analysis"]
+    },
+    {
+      "title": "Delivery & Collaboration",
+      "description": "Used to working in teams, shipping project work, writing documentation, and communicating clearly with both technical and non-technical stakeholders.",
+      "skills": ["Git", "Jest", "Documentation", "Sprint Planning", "Client Work", "Leadership", "Testing", "Team Collaboration"]
+    }
+  ],
   "location": "United Kingdom",
   "availability": "Open to opportunities",
   "availabilityNote": "Open to internships, part-time roles, and project-based work in AI engineering, backend systems, and agentic tooling. During university term time I can usually commit 5-10 hours per week remotely. From June 2026 onward I'll have much broader availability for summer internships and higher-hour commitments. Based in the UK and open to remote or hybrid roles. I'm also happy to relocate internationally for the summer for the right opportunity.",

@@ -1,3 +1,4 @@
+import CapabilitiesSection from "@/components/CapabilitiesSection";
 import ContactSection from "@/components/ContactSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import HeroSequence from "@/components/HeroSequence";
@@ -29,11 +30,17 @@ export default async function LocalePage({ params }: LocalePageProps) {
         profile={profile}
       />
       <div className="mx-auto w-full max-w-5xl px-6 sm:px-10 md:pl-16 md:pr-10">
-        <ProjectsSection
-          projects={profile.projects}
-          title={messages.sections.projects}
-          linkLabels={messages.links}
+        <CapabilitiesSection
+          capabilities={profile.capabilities}
+          title={messages.sections.capabilities}
         />
+        <div className="border-t border-divider">
+          <ProjectsSection
+            projects={profile.projects}
+            title={messages.sections.projects}
+            linkLabels={messages.links}
+          />
+        </div>
         <div className="border-t border-divider">
           <ExperienceSection
             experience={profile.experience}

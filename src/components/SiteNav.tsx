@@ -10,7 +10,13 @@ type SiteNavProps = {
   messages: SiteMessages;
 };
 
-const navItemIds = ["home", "projects", "experience", "contact"] as const;
+const navItemIds = [
+  "home",
+  "capabilities",
+  "projects",
+  "experience",
+  "contact",
+] as const;
 
 export default function SiteNav({ locale, messages }: SiteNavProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +24,7 @@ export default function SiteNav({ locale, messages }: SiteNavProps) {
   const prefersReducedMotion = useReducedMotion();
   const navItems = [
     { id: "home", label: messages.nav.home },
+    { id: "capabilities", label: messages.nav.capabilities },
     { id: "projects", label: messages.nav.projects },
     { id: "experience", label: messages.nav.experience },
     { id: "contact", label: messages.nav.contact },

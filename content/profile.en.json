@@ -36,6 +36,21 @@
   },
   "projects": [
     {
+      "title": "Cambridge Battlecode - Top 10 UK",
+      "description": "Autonomous strategy-game bot that placed in the top 10 of the UK bracket at Cambridge Battlecode, a six-week AI programming competition inspired by MIT Battlecode.",
+      "tags": ["Game AI", "Algorithms", "Strategy", "Competitive Programming"],
+      "links": {
+        "github": "",
+        "demo": "",
+        "writeup": ""
+      },
+      "highlights": [
+        "Finished in the top 10 of the UK bracket, in a competition with hundreds of teams from universities worldwide.",
+        "Wrote a fully autonomous bot for a turn-based strategy game, where units gather resources, expand, and fight with no human input during a match.",
+        "Iterated on strategy against a live ranked ladder, testing each version against other teams' bots through weekly sprints and qualifiers."
+      ]
+    },
+    {
       "title": "Song Library Manager for Musicians",
       "description": "Dynamic web app for managing song libraries with client-side rendering, AJAX-loaded JSON data, and a Node.js REST API.",
       "tags": ["JavaScript", "Node.js", "Jest", "AJAX", "HTML", "CSS", "REST API", "ESLint"],
@@ -139,17 +154,6 @@
         "Maximised deterministic automation, enforced through GitFlow, hooks, and JSON schemas at every pipeline and agent boundary."
       ],
       "tags": ["MCP", "LLM Agents", "Blockchain Forensics", "Data Pipelines", "Research"]
-    },
-    {
-      "role": "Cambridge Battlecode - Top 10 UK",
-      "org": "AI programming competition",
-      "dates": "2026",
-      "bullets": [
-        "Finished in the top 10 of the UK bracket at Cambridge Battlecode, a six-week AI programming competition inspired by MIT Battlecode with hundreds of teams from universities worldwide.",
-        "Wrote a fully autonomous bot for a turn-based strategy game, where units gather resources, expand, and fight with no human input during a match.",
-        "Iterated on strategy against a live ranked ladder, testing each version against other teams' bots through weekly sprints and qualifiers."
-      ],
-      "tags": ["Game AI", "Algorithms", "Strategy", "Competitive Programming"]
     },
     {
       "role": "MEng Computer Science Student",

@@ -129,6 +129,39 @@
   ],
   "experience": [
     {
+      "role": "Research Intern (AI & Blockchain Forensics)",
+      "org": "Ukrainian Modern Digital Science",
+      "dates": "May 2026 - Aug 2026",
+      "bullets": [
+        "Designed custom MCP servers and tool schemas, giving LLM agents structured access to blockchain data, document search, and a shared evidence store.",
+        "Ingested 1,000+ documents, 30K+ messages, and 210K+ on-chain transactions into one queryable evidence layer, handling public API rate limits at scale.",
+        "Automated correlation of document claims against on-chain activity, scoring each match by confidence to separate verified links from speculation.",
+        "Maximised deterministic automation, enforced through GitFlow, hooks, and JSON schemas at every pipeline and agent boundary."
+      ],
+      "tags": ["MCP", "LLM Agents", "Blockchain Forensics", "Data Pipelines", "Research"]
+    },
+    {
+      "role": "Cambridge Battlecode - Top 10 UK",
+      "org": "AI programming competition",
+      "dates": "2026",
+      "bullets": [
+        "Finished in the top 10 of the UK bracket at Cambridge Battlecode, a six-week AI programming competition inspired by MIT Battlecode with hundreds of teams from universities worldwide.",
+        "Wrote a fully autonomous bot for a turn-based strategy game, where units gather resources, expand, and fight with no human input during a match.",
+        "Iterated on strategy against a live ranked ladder, testing each version against other teams' bots through weekly sprints and qualifiers."
+      ],
+      "tags": ["Game AI", "Algorithms", "Strategy", "Competitive Programming"]
+    },
+    {
+      "role": "MEng Computer Science Student",
+      "org": "Durham University",
+      "dates": "Oct 2023 - Jul 2027",
+      "bullets": [
+        "On track for First Class Honours (1:1).",
+        "Focus areas include AI engineering, distributed systems, and machine learning systems."
+      ],
+      "tags": ["AI", "Systems", "ML"]
+    },
+    {
       "role": "Activity Manager",
       "org": "Oxford International",
       "dates": "Jun 2025 - Aug 2025",
@@ -149,16 +182,6 @@
         "Worked collaboratively with staff to deliver engaging, well-organized activities."
       ],
       "tags": ["Leadership", "Teamwork", "Responsibility"]
-    },
-    {
-      "role": "MEng Computer Science Student",
-      "org": "Durham University",
-      "dates": "Oct 2023 - Jul 2027",
-      "bullets": [
-        "On track for First Class Honours (1:1).",
-        "Focus areas include AI engineering, distributed systems, and machine learning systems."
-      ],
-      "tags": ["AI", "Systems", "ML"]
     }
   ]
 }
